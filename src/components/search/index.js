@@ -14,7 +14,7 @@ const Search = () => {
     return setSearch(true);
   }
   if (search) {
-    async function fetchData() {
+    const fetchData = async () => {
       const request = await instance.get('/b5544baebde4bfe9fe2d12e8e5502cbf/raw/44deafab00fc808ed7fa0e59a8bc959d255b9785/queryResult.json');
       // gets base url from axios.js and parse the extension from requests.js
       console.log('request',request);
@@ -26,6 +26,7 @@ const Search = () => {
     fetchData();
     // if [] , run once when the row loads, and dont run again
     // if async is set you need to include the dependency -> fetchURL
+    setSearch(false);
   }
 
   return (
