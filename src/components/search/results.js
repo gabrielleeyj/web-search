@@ -33,10 +33,11 @@ const Results = ({ page, pageSize, lists, totalResult }) => {
       return text.join('');
     }
   }
+
   return (
     <>
-      <div className="container mx-auto my-8 px-4 lg:px-20 flex items-center">
-        <h1 className="text-xl">Showing {page} - {pageSize} of {totalResult} results</h1>
+      <div className="container relative flex mx-auto my-8 px-4 lg:px-20">
+        {lists.length > 1 ? <h1 className="text-xl">Showing {page} - {pageSize} of {totalResult} results</h1> : ''}
       </div>
       <div className="container mx-auto my-4 px-4 lg:px-20">
       {lists.map(result => (
